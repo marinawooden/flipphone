@@ -1,0 +1,36 @@
+WindowManager:
+  HomeWindow:
+  MenuWindow:
+
+<HomeWindow>:
+  name: "home"
+
+  BoxLayout:
+    orientation: "vertical"
+    size: root.width, root.height
+
+    Label:
+      text: "Home"
+      font_size: 12
+
+    Button:
+      text: "Next Screen"
+      font_size: 12
+      on_release: app.root.current = "menu"
+
+<MenuWindow>:
+  name: "menu"
+
+  BoxLayout:
+    orientation: "vertical"
+    size: root.width, root.height
+
+    Label:
+      text: "Menu"
+      font_size: 12
+
+    Button:
+      text: "Go Back"
+      font_size: 12
+      on_release:
+        app.root.current = "home"
