@@ -4,19 +4,63 @@ WindowManager:
 
 <HomeWindow>:
   name: "home"
+  canvas.before:
+    Color:
+      rgba: 1, 1, 1, 1
+    Rectangle:
+      size: self.size
+      pos: self.pos
 
   BoxLayout:
     orientation: "vertical"
     size: root.width, root.height
 
+    BoxLayout:
+      padding: 5
+      orientation: "horizontal"
+      size_hint_y: None
+      height: 20
+      canvas.before:
+        Color:
+          rgba: 0, 0, 0, .5
+        Rectangle:
+          size: self.size
+          pos: self.pos
+
+      BoxLayout:
+        Image:
+          source: "img/network-4.png"
+          size_hint_x: None
+          width: 8
+
+      BoxLayout:
+        orientation: "horizontal"
+
+        Image:
+          source: "img/speaker.png"
+          size_hint_x: None
+          width: 8
+        Widget:
+          width: 10
+          size_hint_x: None
+        Image:
+          source: "img/battery.png"
+          size_hint_x: None
+          width: 13
+
+
     Label:
       text: "Home"
       font_size: 12
+      color: 0, 0, 0, 1
 
     Button:
-      text: "Next Screen"
+      text: "Menu"
       font_size: 12
+      height: 15
       on_release: app.root.current = "menu"
+      size: 75, 30
+      size_hint: None, None
 
 <MenuWindow>:
   name: "menu"
